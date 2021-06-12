@@ -1,0 +1,37 @@
+<div class="container">
+<div class="card  mb-3 border-0">
+  <div class="card-body text-primary border-0">
+    <h5 class="card-title border-0"></h5>
+
+       <table class="table border-0">
+
+          <tbody>
+            <tr *ngFor="let item of resultados | fitro:page"  class="border-0">
+            <td class="border-0"> <img [src]="item.thumbnail" width="120px" height="120px" alt=""> </td>
+                <td class="border-0">  <div style="display:inline-flex;">$ {{item.price}} &nbsp;
+                  <div *ngIf="item.shipping.free_shipping == true; " >
+                    <img src="./assets/img/ic_shipping@2x.png" width="40%"alt=""/>
+                  </div>
+                                      </div>
+
+
+
+                                      <p>
+                                               <a style="  text-decoration: none; color: black;" [routerLink]="['/productos/',item.id]" >{{item.title}}</a>
+                                      </p>
+                 </td>
+                   <td class="border-0">  </td>
+                   <td class="border-0"> {{item.address.state_name}}</td>
+            </tr>
+          </tbody>
+       </table>
+  </div>
+</div>
+<div class="contanier" style="padding-bottom:15px;">
+<button class="btn btn-primary" (click)="cargarAnterior()" > Previo  </button>
+&nbsp;
+    <button class="btn btn-primary" (click)="cargarSiguiente()" >siguiente  </button>
+    &nbsp;
+    <br>
+     </div>
+</div>

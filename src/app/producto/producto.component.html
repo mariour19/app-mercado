@@ -1,0 +1,38 @@
+<div class="card  mb-3 border-0">
+
+  <div class="card-body text-primary border-0 cajas" >
+
+       <div class="table border-0">
+
+          <div style="border: none;  ">
+            <div style="border: none;  " class="cajas">
+                   <div style="border: none;"  class="centro"><img [src]="productoIMG"  class="imagen360" alt=""></div>
+                   <div style="border: none;">  </div>
+                   <div style="border: none; text-align:right;" class="descripcion"> <p>{{producto.condition}} - {{producto.sold_quantity}} Vendidos</p><h4> {{ producto.title}} </h4> <br> <h3> $ {{producto.price}}  </h3>  <br> <button class="btn btn-primary"> comprar</button>  </div>
+            </div>
+          </div>
+       </div >
+  </div>
+</div>
+<div class="card border-0">
+
+  <div class=" border-0">
+
+       <table class="table border-0" style="border: none;">
+          <thead class="border-0">
+             <tr style="border: none;">
+                <th style="border: none;">Descripción</th>
+
+
+             </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+                   <td style="border: none;"> {{productoDesc.plain_text}} </td>
+
+            </tr>
+          </tbody>
+       </table>
+  </div>
+</div>
