@@ -23,6 +23,7 @@ this.restService.getBusqueda(id).subscribe((respuesta) =>{
 this.resultados = respuesta.results;
 console.log(this.resultados);
 
+}, (err)=>{console.log('Error en BusquedaComponent');
 })
     })
 
@@ -32,6 +33,7 @@ console.log(this.resultados);
     this.resultadosAddress = resp.results;
     console.log(resp.results);
 
+    }, (err)=>{console.log('Error en BusquedaComponent');
     })
         })
 

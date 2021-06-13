@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent}  from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import {ProductoComponent} from './producto/producto.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { FitroPipe } from './busqueda/pipes/fitro.pipe';
+import {InterceptorService} from './interceptors/interceptor.service';
 
 const routes: Routes =[
-{path: '', redirectTo: '/clientes', pathMatch: 'full'},
+{path: '', redirectTo: '/busqueda', pathMatch: 'full'},
 
 {path: 'productos', component:ProductoComponent },
 {path: 'productos/:id', component:ProductoComponent },
@@ -40,7 +41,11 @@ const routes: Routes =[
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ BusquedaComponent],
+  providers: [ BusquedaComponent,
+{provide: HTTP_INTERCEPTORS,
+useClass: InterceptorService,
+multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
